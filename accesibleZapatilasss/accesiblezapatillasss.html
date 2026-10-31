@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zapatillasss</title>
-    <link rel="stylesheet" href="accesiblezapatillasss.css">
+    <link rel="stylesheet" href="AccesibleZapatillasss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -82,8 +82,8 @@
     </aside>
     <!--CABECERA-->
     <header>
-        <!--NOMBRE DE LA WEB-->
-        <h1 id="inicio">Zapatillasss</h1>
+        <!--NOMBRE DE LA WEB, ya no tiene id inicio ya que se oculta al deslizar y cuando se llega a ver el botón "volver arriba" no se puede hacer referencia a este h1-->
+        <h1>Zapatillasss</h1>
         <!--MENÚ DE OPCIONES-->
         <nav>
             <label for="menu-toggle" class="menu-toggle-label" title="Abrir menú">☰</label>
@@ -324,9 +324,8 @@
         </div>
     </main>
     <!-- 
-    1. Al bajar más de 100px: añade la clase 'scrolled' para compactar el menú (oculta el título y deja solo la barra fija).
-    2. Al subir a menos de 30px: quita la clase y restaura el diseño completo original.
-    3. Usa dos valores distintos (100px y 30px) para crear un margen de seguridad (histéresis) que evita que la página vibre o se trabe al cambiar la altura del header.
+    Al bajar más de 100px: añade la clase scrolled para compactar el menú (aqui es donde se oculta el título y deja solo la barra fija).
+    Al subir a menos de 30px: quita la clase y vuelve al diseño original.
     -->
     <script>
         window.addEventListener('scroll', function () {

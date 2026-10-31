@@ -14,10 +14,7 @@ header, footer {
     color: #000000;
     padding: 10px 0;
 }
-/** CAMBIO MENÚ SUPERIOR: El header es sticky desde el principio para evitar el
-    salto brusco que ocurre al cambiar de 'static' a 'sticky' durante el scroll.
-    El h1 se colapsa con transición suave (max-height + opacity) en vez de
-    display:none, eliminando el trabeo causado por el cambio brusco de altura. **/
+/* El header es sticky desde el principio para evitar un cambio brusco al empeaueñecerse y fijarse */
 header {
     position: sticky;
     top: 0;
@@ -64,7 +61,6 @@ nav img, footer img {
     top: 10px;
     left: 10px;
     font-size: 20px;
-    cursor: pointer;
     z-index: 2;
 }
 .menu-lateral {
@@ -75,9 +71,7 @@ nav img, footer img {
     width: 250px;
     background-color: #ffffff;
     color: #000000;
-    /** CAMBIO MENÚ SUPERIOR: z-index subido a 1001 para que el menú lateral
-        siga apareciendo por encima del header sticky (z-index: 1000). **/
-    z-index: 1001;
+    z-index: 1001; /* El header tiene z index 100, por tanto el menu debe superponerse */
     transition: left 1.5s;
     overflow-y: auto;
 }
@@ -87,9 +81,17 @@ nav img, footer img {
 .menu-toggle:checked + .menu-lateral .menu-toggle {
     display: none;
 }
+/* cursor pointer y hoover*/
 .menu-toggle-label {
     float: left;
     margin-left: 1rem;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+.menu-toggle-label:hover {
+    background-color: rgba(0, 0, 0, 0.15);
 }
 .menu-cerrar {
     position: absolute;
@@ -112,6 +114,14 @@ nav img, footer img {
     margin-left: 1rem;
     margin-bottom: 1.5rem;
     font-size: 1.25rem;
+}
+/* se hacen los summary interactivos visualmente */
+.desplegable-menu-lateral summary {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.desplegable-menu-lateral summary:hover {
+    text-decoration: underline;
 }
 ul {
     list-style-type: none;
@@ -136,7 +146,16 @@ main {
     margin: 20px;
     padding: 10px;
     flex: 0 0 calc(33.33% - 40px);
-    max-width: calc(33.33% - 40px); 
+    max-width: calc(33.33% - 40px);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* pequeña elevación y sombra al pasar por encima de cada producto */
+.producto:hover, .producto-oferta:hover,
+.producto:focus-within, .producto-oferta:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes parpadeo {
@@ -154,6 +173,16 @@ main {
 .producto img, .producto-oferta img {
     max-width: 20vw;
     height: auto;
+}
+/* ver descripcion con interaccion vidual */
+.producto summary, .producto-oferta summary {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: color 0.2s ease;
+}
+.producto summary:hover, .producto-oferta summary:hover {
+    text-decoration: underline;
 }
 .agregar-carrito, .buscar {
     background-color: #000000;
@@ -174,13 +203,11 @@ main {
 .ofertadespues {
     color: #d70606;
 }
+/*se eliminó que las estrellas se vieran con interacción*/
 .star {
     font-size: 24px; /* Tamaño de las estrellas */
     color: gold; /* Color de las estrellas */
-    cursor: pointer; /* Cambia el cursor al pasar sobre las estrellas */
-}
-.star:hover {
-    color: rgb(0, 0, 0); /* Cambia el color cuando pasas el cursor sobre ellas */
+    cursor: default;
 }
 @media (max-width: 992px) {
     .producto, .producto-oferta {

@@ -5,44 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zapatillasss</title>
-    <link rel="stylesheet" href="accesiblezapatillasss.css">
+    <link rel="stylesheet" href="zapatillasss.css?1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<!-- Como el h1 se oculta ponemos id inicio a la parte superior del body de manera que el botón de volver arriba acabe llevando al mismo sitio -->
-<body id="inicio">
+<body>
     <!--BOTÓN DE ABRIR EL MENÚ-->
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <!--MENÚ LATERAL-->
     <aside class="menu-lateral">
         <!--BOTÓN DE CERRAR EL MENÚ-->
-        <button type="button" class="menu-cerrar" aria-label="Cerrar menú"
-            onclick="document.getElementById('menu-toggle').checked = false;">←</button>
+        <label for="menu-toggle" class="menu-cerrar">←</label>
         <div class="menu-contenido">
-            <h1 class="titulo-menu-lateral">Filtrar por:</h1>
-            <form method="POST" action="accesiblezapatillasss.html">
+            <h2 class="titulo-menu-lateral">Filtrar por:</h2>
+            <form method="POST" action="Originalzapatillasss.html">
                 <details class="desplegable-menu-lateral">
                     <summary>Color</summary>
                     <ul>
                         <li>
                             <label for="color1">Rojo</label>
-                            <input type="checkbox" id="color1" name="colores1" value="Rojo">
+                            <input type="checkbox" id="color1" name="colores" value="Rojo">
                         </li>
                         <li>
                             <label for="color2">Verde</label>
-                            <input type="checkbox" id="color2" name="colores2" value="Verde">
+                            <input type="checkbox" id="color2" name="colores" value="Verde">
                         </li>
                         <li>
                             <label for="color3">Azul</label>
-                            <input type="checkbox" id="color3" name="colores3" value="Azul">
+                            <input type="checkbox" id="color3" name="colores" value="Azul">
                         </li>
                         <li>
-                            <label for="color4">Amarillo</label>
-                            <input type="checkbox" id="color4" name="colores4" value="Amarillo">
+                            <label for="color3">Amarillo</label>
+                            <input type="checkbox" id="color4" name="colores" value="Amarillo">
                         </li>
                         <li>
-                            <label for="color5">Morado</label>
-                            <input type="checkbox" id="color5" name="colores5" value="Morado">
+                            <label for="color3">Morado</label>
+                            <input type="checkbox" id="color5" name="colores" value="Morado">
                         </li>
                     </ul>
                 </details>
@@ -51,43 +49,45 @@
                     <ul>
                         <li>
                             <label for="talla1">XS</label>
-                            <input type="checkbox" id="talla1" name="tallas1" value="XS">
+                            <input type="checkbox" id="talla1" name="tallas" value="XS">
                         </li>
                         <li>
                             <label for="talla2">S</label>
-                            <input type="checkbox" id="talla2" name="tallas2" value="S">
+                            <input type="checkbox" id="talla2" name="tallas" value="S">
                         </li>
                         <li>
                             <label for="talla3">M</label>
-                            <input type="checkbox" id="talla3" name="tallas3" value="M">
+                            <input type="checkbox" id="talla3" name="tallas" value="M">
                         </li>
                         <li>
                             <label for="talla4">L</label>
-                            <input type="checkbox" id="talla4" name="tallas4" value="L">
+                            <input type="checkbox" id="talla4" name="tallas" value="L">
                         </li>
                         <li>
                             <label for="talla5">XL</label>
-                            <input type="checkbox" id="talla5" name="tallas5" value="XL">
+                            <input type="checkbox" id="talla5" name="tallas" value="XL">
                         </li>
                     </ul>
                 </details>
                 <details class="desplegable-menu-lateral">
                     <summary>Precio</summary>
-                    <label for="precioFiltro" class="precio" style="display: block;">0$ - 500$</label>
+                    <label for="precioFiltro">
+                        <pre class="precio">0$  -  500$</pre>
+                    </label>
                     <input class="precio" type="range" id="precioFiltro" min="0" max="500" step="1" value="50">
                 </details>
-                <button type="submit" class="buscar">Buscar</button>
+                <button class="buscar">Buscar</button>
             </form>
         </div>
     </aside>
     <!--CABECERA-->
     <header>
         <!--NOMBRE DE LA WEB-->
-        <h1>Zapatillasss</h1>
+        <h1 id="inicio">Zapatillasss</h1>
         <!--MENÚ DE OPCIONES-->
         <nav>
-            <label for="menu-toggle" class="menu-toggle-label" title="Abrir menú">☰</label>
             <ul>
+                <label for="menu-toggle" class="menu-toggle-label">☰</label>
                 <li><a href="index.html"><img src="IMAGENES/boton-de-inicio.png" alt="Inicio WEB"
                             title="Inicio WEB"></a></li>
                 <li><a href="informacion_tienda.html"><img src="IMAGENES/boton-de-informacion.png"
@@ -122,7 +122,7 @@
                 <span class="star">&#9734;</span>
             </div>
             <!--BOTÓN DE AGREGAR AL CARRITO-->
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto-oferta">
             <img src="IMAGENES/oferta1.png" alt="Zapatilla 2" title="Zapatilla 2">
@@ -140,7 +140,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa3.jpg" alt="Zapatilla 3" title="Zapatilla 3">
@@ -158,7 +158,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa4.jpg" alt="Zapatilla 4" title="Zapatilla 4">
@@ -176,7 +176,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa5.jpg" alt="Zapatilla 5" title="Zapatilla 5">
@@ -194,7 +194,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa6.jpg" alt="Zapatilla 6" title="Zapatilla 6">
@@ -212,7 +212,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa7.jpg" alt="Zapatilla 7" title="Zapatilla 7">
@@ -230,7 +230,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto-oferta">
             <img src="IMAGENES/oferta2.png" alt="Zapatilla 8" title="Zapatilla 8">
@@ -248,7 +248,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa9.jpg" alt="Zapatilla 9" title="Zapatilla 9">
@@ -266,7 +266,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa10.jpg" alt="Zapatilla 10" title="Zapatilla 10">
@@ -284,7 +284,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa11.jpg" alt="Zapatilla 11" title="Zapatilla 11">
@@ -302,7 +302,7 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
         <div class="producto">
             <img src="IMAGENES/Zapa12.jpg" alt="Zapatilla 12" title="Zapatilla 12">
@@ -320,27 +320,11 @@
                 <span class="star">&#9734;</span>
                 <span class="star">&#9734;</span>
             </div>
-            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+            <button class="agregar-carrito">Añadir al Carrito</button>
         </div>
     </main>
-    <!-- 
-    1. Al bajar más de 100px: añade la clase 'scrolled' para compactar el menú (oculta el título y deja solo la barra fija).
-    2. Al subir a menos de 30px: quita la clase y restaura el diseño completo original.
-    3. Usa dos valores distintos (100px y 30px) para crear un margen de seguridad (histéresis) que evita que la página vibre o se trabe al cambiar la altura del header.
-    -->
-    <script>
-        window.addEventListener('scroll', function () {
-            const header = document.querySelector('header');
-            if (!header.classList.contains('scrolled') && window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else if (header.classList.contains('scrolled') && window.scrollY < 30) {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
     <!--PIE DE PÁGINA-->
     <footer class="piepagina">
-        <!-- /** CAMBIO BOTÓN VOLVER ARRIBA: Se añade onclick con scrollTo({top: 0, behavior: 'smooth'}) para garantizar la vuelta arriba inmediata y fluida. **/ -->
         <a href=#inicio><img src="IMAGENES/flecha-arriba.png" alt="Volver Arriba" title="Volver Arriba"></a>
         <p>2026 Tienda zapatillasss</p>
     </footer>
